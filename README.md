@@ -1,7 +1,7 @@
 Rails project created by LeWagon Students:
-[Federico Palou](https://github.com/fpalou)
-[Gustavo Franco](https://github.com/GusFrancoH)
-[Tiphaine Ollivier](https://github.com/Tiphaineoz)
+- [Federico Palou](https://github.com/fpalou)
+- [Gustavo Franco](https://github.com/GusFrancoH)
+- [Tiphaine Ollivier](https://github.com/Tiphaineoz)
 
 Resources:
 - [Heroku Page](https://dimensional-haul-623e2c8f5718.herokuapp.com/)

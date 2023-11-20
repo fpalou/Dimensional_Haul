@@ -1,5 +1,6 @@
 class DimensionsController < ApplicationController
-  before_action :set_dimension, only: %i[show edit update destroy]
+  before_action :set_dimension, only: %i[show edit update destroy] 
+  before_action :authenticate_user!, except: %i[index show]
 
   # GET /dimensions
   def index
@@ -21,9 +22,10 @@ class DimensionsController < ApplicationController
 
   # POST /dimensions
   def create
+    @user = current_user
     @dimension = Dimension.new(dimension_params)
-    @dimension.users_id = current_user.id
-    @dimension.categories_id = params[:dimension][:categories_id]
+    @dimension.user_id = current_user.id
+    @dimension.category_id = params[:dimension][:category_id]
 
     if @dimension.save
       redirect_to @dimension, notice: 'Dimension was successfully created.'
@@ -56,7 +58,7 @@ class DimensionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def dimension_params
-    params.require(:dimension).permit(:title, :decription, :reviews, :categories_id, :users_id)
+    params.require(:dimension).permit(:title, :description, :reviews, :category_id, :user_id)
   end
 
 end

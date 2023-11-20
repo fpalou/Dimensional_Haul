@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_21_095020) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_21_121009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,12 +20,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_095020) do
     t.string "perks"
     t.boolean "confirmation", default: false
     t.integer "guests"
-    t.bigint "users_id", null: false
-    t.bigint "dimensions_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "dimension_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dimensions_id"], name: "index_bookings_on_dimensions_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["dimension_id"], name: "index_bookings_on_dimension_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -38,12 +38,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_095020) do
     t.string "title"
     t.text "description"
     t.float "reviews"
-    t.bigint "categories_id", null: false
-    t.bigint "users_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_dimensions_on_categories_id"
-    t.index ["users_id"], name: "index_dimensions_on_users_id"
+    t.index ["category_id"], name: "index_dimensions_on_category_id"
+    t.index ["user_id"], name: "index_dimensions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,8 +62,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_095020) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "dimensions", column: "dimensions_id"
-  add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "dimensions", "categories", column: "categories_id"
-  add_foreign_key "dimensions", "users", column: "users_id"
+  add_foreign_key "bookings", "dimensions"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "dimensions", "categories"
+  add_foreign_key "dimensions", "users"
 end

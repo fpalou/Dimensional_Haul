@@ -4,11 +4,15 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @dimension = Dimension.find(params[:dimension_id])
     @booking = Booking.new
   end
 
-  def create  
+  def create
+    @dimension = Dimension.find(params[:dimension_id])
     @booking = Booking.new(bookings_params)
+    @booking.dimension = @dimension
+    @booking.user = current_user
     if @booking.save
       redirect_to booking_path, :notice => "Successfully created booking."
     else
@@ -17,10 +21,18 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:id])
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+
+    @booking.destroy
+    redirect_to dimension_path, :notice => "Successfully destroyed booking."
   end
 
   private
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date, :perks, :confirmation, :guests, :users_id, :dimensions_id)
+    params.require(:booking).permit(:start_date, :end_date, :perks, :guests)
   end
 end

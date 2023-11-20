@@ -1,7 +1,10 @@
-<%= simple_form_for [dimension, booking] do |f| %>
-<%= f.input :start_date %>
-<%=  %>
-<%= f.input :description %>
-<%= f.association :category, as: :radio_buttons, prompt: "" %>
+<%= simple_form_for [@dimension, booking] do |f| %>
+<%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker", range: "true" } } %>
+<%= f.input :end_date,
+            as: :hidden %>
+<%= f.input :guests %>
+<%= f.input :perks %>
 <%= f.submit "Submit", class: "btn btn-success" %>
 <% end %>

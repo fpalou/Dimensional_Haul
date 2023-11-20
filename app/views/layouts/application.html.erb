@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -14,10 +14,12 @@
   <body>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+       <%= render "shared/flashes" %>
 
+    <%= render "shared/navbar" %> 
     <div class="container col-12">
       <div class="container-header">
-        <%= render "layouts/navbar" %>
+        <%# do we need anything in a header? %>
       </div>
 
       <div class="container-content">
@@ -28,9 +30,9 @@
         </div>
       </div>
 
-      <footer>
-        <%= render "layouts/footer" %>
-      </footer>
     </div>
+      <footer>
+        <%= render "shared/footer" %>
+      </footer>
   </body>
 </html>

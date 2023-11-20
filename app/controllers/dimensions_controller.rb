@@ -26,7 +26,6 @@ class DimensionsController < ApplicationController
     @dimension = Dimension.new(dimension_params)
     @dimension.user_id = current_user.id
     @dimension.category_id = params[:dimension][:category_id]
-
     if @dimension.save
       redirect_to @dimension, notice: 'Dimension was successfully created.'
     else

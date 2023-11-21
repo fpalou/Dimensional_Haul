@@ -13,6 +13,23 @@
   <body>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-    <%= yield %>
+    
+    <div class="container col-12">
+      <div class="container-header">
+        <%# we will render the navbar from Gustavo here %>
+      </div>
+
+      <div class="container-content">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <%# we will render the footer from Gustavo here %>
+      </footer>
+    </div>
   </body>
 </html>

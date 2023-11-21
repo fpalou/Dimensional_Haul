@@ -1,0 +1,14 @@
+.form {
+  background-color: $yellow;
+  color: $dark-blue;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid $dark-blue;
+  padding: 5px;
+  margin: 5px;
+  background-color: none;
+}

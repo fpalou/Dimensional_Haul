@@ -1,5 +1,6 @@
 class DimensionsController < ApplicationController
-  before_action :set_dimension, only: %i[show edit update destroy]
+  before_action :set_dimension, only: %i[show edit update destroy] 
+  before_action :authenticate_user!, except: %i[index show]
 
   # GET /dimensions
   def index
@@ -21,6 +22,7 @@ class DimensionsController < ApplicationController
 
   # POST /dimensions
   def create
+    @user = current_user
     @dimension = Dimension.new(dimension_params)
     @dimension.user_id = current_user.id
     @dimension.category_id = params[:dimension][:category_id]

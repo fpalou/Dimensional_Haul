@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_121009) do
     t.date "start_date"
     t.date "end_date"
     t.string "perks"
-    t.boolean "confirmation"
+    t.boolean "confirmation", default: false
     t.integer "guests"
     t.bigint "user_id", null: false
     t.bigint "dimension_id", null: false

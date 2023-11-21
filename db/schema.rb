@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_20_163555) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_21_095019) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.string "perks"
+    t.boolean "confirmation"
+    t.integer "guests"
+    t.bigint "users_id", null: false
+    t.bigint "dimensions_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dimensions_id"], name: "index_bookings_on_dimensions_id"
+    t.index ["users_id"], name: "index_bookings_on_users_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dimensions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.float "reviews"
+    t.bigint "categories_id", null: false
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["categories_id"], name: "index_dimensions_on_categories_id"
+    t.index ["users_id"], name: "index_dimensions_on_users_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,8 +52,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_163555) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.boolean "owner", default: false
     t.boolean "client", default: false
     t.datetime "created_at", null: false
@@ -30,4 +62,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_163555) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "dimensions", column: "dimensions_id"
+  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "dimensions", "categories", column: "categories_id"
+  add_foreign_key "dimensions", "users", column: "users_id"
 end

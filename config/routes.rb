@@ -14,5 +14,4 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[show destroy]
   ## Custom routes for profile
   resource :profile, only: [:show]
-
 end

@@ -57,7 +57,6 @@ class DimensionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def dimension_params
-    params.require(:dimension).permit(:title, :description, :reviews, :category_id, :user_id)
+    params.require(:dimension).permit(:title, :description, :reviews, :category_id, :user_id, :photo)
   end
-
 end

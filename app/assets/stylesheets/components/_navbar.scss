@@ -1,6 +1,9 @@
+@import "config/colors";
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $yellow;
+  border: solid 1px $gray;
 }
 
 .navbar-lewagon .navbar-collapse {

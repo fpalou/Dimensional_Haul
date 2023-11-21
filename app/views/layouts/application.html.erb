@@ -11,8 +11,25 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+    <div class="container col-12">
+      <div class="container-header">
+        <%= render "layouts/navbar" %>
+      </div>
+
+      <div class="container-content">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <%= render "layouts/footer" %>
+      </footer>
+    </div>
   </body>
 </html>

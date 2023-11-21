@@ -1,0 +1,6 @@
+<%= simple_form_for [dimension] do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.association :category, as: :radio_buttons, prompt: "" %>
+<%= f.submit "Submit", class: "btn btn-success" %>
+<% end %>

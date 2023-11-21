@@ -58,5 +58,4 @@ class DimensionsController < ApplicationController
   def dimension_params
     params.require(:dimension).permit(:title, :decription, :reviews, :categories_id, :users_id)
   end
-
 end

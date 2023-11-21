@@ -1,0 +1,9 @@
+<% @dimensions.each do |dimension| %>
+  <div class="card-product">
+    <img src="/home/gustavo/code/GusFrancoH/Dimensional_Haul/app/assets/images/astronaut outerspace.jpg" />
+    <div class="card-product-infos">
+      <h2> <%= dimension.title %></h2>
+      <p><%= dimension.description %></p>
+    </div>
+  </div>
+<% end %>

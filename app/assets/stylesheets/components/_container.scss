@@ -1,3 +1,9 @@
+.confo {
+  background-color: $dark-blue;
+  border-color: 2px solid $yellow;
+  margin: 10px auto;
+}
+
 .row {
   background-color: $dark-blue;
 }
@@ -8,4 +14,8 @@
 
 h1{
   color: $purple;
+}
+
+h2 {
+  color: $yellow;
 }

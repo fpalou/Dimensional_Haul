@@ -12,8 +12,8 @@
 
 .card-product img {
   height: 100%;
-  width: 100px;
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
   padding: 8px;
   border-radius: 8px;
 }
@@ -23,6 +23,12 @@
   font-weight: bold;
   margin: 0;
   color: $blue
+}
+
+.card-product h3 {
+  font-size: 14px;
+  margin: 8px;
+  color: $yellow
 }
 
 .card-product p {

@@ -15,4 +15,3 @@ Category.create(name: "Romantic escapades")
 Category.create(name: "Sci-Fi")
 
 User.create!(email: "admin@gmail.com", password: "adminn", first_name: "Admin", last_name: "Admin", owner: true, client: true)
-Dimension.create(title: "Dino Retreat", description: "A Jurassic Park themed vacation home", reviews: 4.5, category_id: 1, user_id: 1)

@@ -1,0 +1,10 @@
+.banner-btn,
+.banner-btn:hover,
+.banner-btn:focus {
+  color: #ffee08;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: $orange;
+}
+.banner-style{
+  background-color: $gray;
+}

@@ -1,9 +1,7 @@
-@import "config/colors";
-
 .navbar-lewagon {
   justify-content: space-between;
-  background: $yellow;
-  border: solid 1px $gray;
+  background: $dark-blue;
+  border: solid 3px $yellow
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,5 +9,6 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 50px;
+  border-radius: 50px;
 }

@@ -1,3 +1,4 @@
+
 <%= simple_form_for [@dimension, booking] do |f| %>
 <%= f.input :start_date,
             as: :string,
@@ -6,5 +7,6 @@
             as: :hidden %>
 <%= f.input :guests %>
 <%= f.input :perks %>
-<%= f.submit "Submit", class: "btn btn-success" %>
+<%= f.submit "Submit", class: "btn btn-purple" %>
 <% end %>
+

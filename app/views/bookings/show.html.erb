@@ -1,9 +1,18 @@
-<h1>Bookings#show</h1>
+<div class= "confo col-6">
 
-<% @bookings.each do |b| %>
-  <p> Thanks <%= b.user_id %> for your booking</p>
-  <p> You have booked <%= b.dimension_id %></p>
-  <p> Starting on: <%= b.start_date %> and finishing on: <%= b.end_date %></p>
-  <p> The number of guests will be: <%= b.guests %> </p>
-  <p> And the perks: <%= b.perks %></p>
-<% end %>
+  <h1>Bookinging Confirmed!</h1>
+
+  <div class="card-confo d-flex p-10">
+    <%= cl_image_tag @booking.dimension.photo.key, height: 150, width: 150, crop: :fill %>
+    <div class="card-trip-infos p-10">
+      <div>
+        <h2>You have booked <%= @booking.dimension.title%></h2>
+        
+        <p> Starting on: <%= @booking.start_date %> and finishing on: <%= @booking.end_date %></p>
+        <p> You booked the perks: <%= @booking.perks %></p>
+
+      </div>
+      <p class="card-trip-pricing">Guests: <%= @booking.guests%></p>
+    </div>
+  </div>
+</div>

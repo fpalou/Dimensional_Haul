@@ -1,0 +1,9 @@
+<h1>Bookings#show</h1>
+
+<% @bookings.each do |b| %>
+  <p> Thanks <%= b.user_id %> for your booking</p>
+  <p> You have booked <%= b.dimension_id %></p>
+  <p> Starting on: <%= b.start_date %> and finishing on: <%= b.end_date %></p>
+  <p> The number of guests will be: <%= b.guests %> </p>
+  <p> And the perks: <%= b.perks %></p>
+<% end %>

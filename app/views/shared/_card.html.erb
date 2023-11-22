@@ -5,7 +5,7 @@
     <% end %>
     <div class="col-md-4 col-lg-4 col-xl-4 mb-4">
       <div class="card-product col-lg col-xl col-3">
-        <%# <%= cl_image_tag dimension.photo.key %>
+        <%= cl_image_tag dimension.photo.key %>
         <div class="card-product-infos">
           <h2><%= link_to dimension.title, new_dimension_booking_path(dimension.id) %></h2>
           <p><%= dimension.description %></p>

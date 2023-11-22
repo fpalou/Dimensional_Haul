@@ -1,10 +1,40 @@
 .banner-btn,
 .banner-btn:hover,
 .banner-btn:focus {
-  color: #ffee08;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: $orange;
+  color: $blue;
+  text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); /* Prevent inheritance from `body` */
+  background-color: $yellow;
 }
 .banner-style{
-  background-color: $gray;
+  background-image: url("https://res.cloudinary.com/dckwlb2by/image/upload/v1700663326/banner1.webp");
+  background-size: cover;
+  height: 80vh;
+  background-position: center;
+  h1{
+    color: $blue;
+  }
+  p {
+    color: $orange;
+  }
+
+
+}
+.home-page{
+  color: $orange;
+  p{
+    color: white;
+  }
+}
+.home-card{
+  background-color: $purple;
+}
+.home-info{
+  background-color: $dark-blue;
+  color: $orange;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.lead {
+  color: $orange;
 }

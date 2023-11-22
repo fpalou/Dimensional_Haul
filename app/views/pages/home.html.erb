@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DimensionalHaul</title>
+    <title>Dimensional Haul</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,30 +10,34 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
+  <body class="home-page">
     <%= render "shared/banner" %>
-    <div class="row">
-      <div class="col-12">
-        <h1>Home</h1>
-        <p>Here are randomly displayed a couple of  dimensions</p>
-      </div>
-      <% @dimensions.each do |dimension| %>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card">
-            <% if dimension.photo.key %>
-              <%= cl_image_tag dimension.photo.key, height: 400, width: 400, crop: :fill, class: "card-img-top" %>
-            <% end %>
-            <div class="card-body">
-              <h5 class="card-title"><%= dimension.title %></h5>
-              <p class="card-text"><%= dimension.description %></p>
-              <%= link_to "Show", dimension_path(dimension), class: "btn btn-primary" %>
+    <div class="home-info">
+      <div class="row">
+        <div class="col-12 ">
+          <h3>Discover all possibilities</h3>
+        </div>
+  <% i = 0 %>
+        <% @dimensions.each do |dimension| %>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card home-card mt-3 mr-3">
+              <% if dimension.photo.key %>
+                <%= cl_image_tag dimension.photo.key, height: 400, width: 400, crop: :fill, class: "card-img-top" %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= dimension.title %></h5>
+                <p class="card-text"><%= dimension.description %></p>
+                <%= link_to "Show", dimension_path(dimension), class: "btn btn-primary" %>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <div>
-      <h3>HEre goes some fancy page info</h3>
+          <% i += 1 %>
+          <%break if i > 2 %>
+        <% end %>
+      </div>
+      <%# <div class="home-info">
+        <h3>Here goes some fancy page info</h3>
+      </div> %>
     </div>
             <footer>
         <%= render "shared/footer" %>

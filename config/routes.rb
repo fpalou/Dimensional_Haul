@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'bookings/new'
   get 'bookings/show'
-  root to: "pages#home"
+  # root to: "pages#home"
+  root to: redirect('/home')
+  get 'home', to: 'pages#home'
   devise_for :users, controllers: { profiles: 'profiles' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,5 +16,4 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[show destroy]
   ## Custom routes for profile
   resource :profile, only: [:show]
-
 end

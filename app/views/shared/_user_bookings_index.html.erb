@@ -1,0 +1,16 @@
+    <div class="col-md-4 col-lg-3 col-xl-3 mb-3">
+      <div class="card-product col-lg col-xl col-3">
+        <div class="card-product-infos">
+        <% if @bookings.where(user_id: @user.id).empty? %>
+            <p>You have not booked anything yet. Go ahead and book a Dimensional trip!</p>
+            <%= link_to "All dimensions", dimensions_path, class: "btn btn-teal" %>
+            <% else %>
+        <% @bookings.where(user_id: @user.id).each do |booking| %>
+              <h2><%= booking.dimension.title %></h2>
+              <p>Start Date: <%= booking.start_date %></p>
+              <p>End Date: <%= booking.end_date %></p>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>

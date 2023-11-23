@@ -7,7 +7,6 @@
   height: 100px;
   padding: 0px 50px;
   color: $purple;
-  border: 3px solid $yellow;
 }
 .footer-links {
   display: flex;
@@ -23,6 +22,12 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: $red;
+.footer .fa-solid {
+  color: $purple;
+}
+
+.footer-contact{
+  color: $purple;
+  opacity: 0.75;
+  font-size: 24px;
 }

@@ -1,3 +1,27 @@
 <h1>Your Profile</h1>
 <p>Name: <%= @user.first_name %></p>
 <p>Email: <%= @user.email %></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><% if @user.owner = true %> owner </p>
+<% end %>
+<p><% if @user.client = true %> client </p>
+<% end %>
+
+<%= link_to "Create Dimension", new_dimension_path, class: "nav-link" %>

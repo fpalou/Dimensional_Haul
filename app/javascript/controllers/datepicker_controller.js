@@ -6,7 +6,12 @@ export default class extends Controller {
   connect() {
     flatpickr(this.element)
     flatpickr("[data-controller='datepicker']", {
-      mode: "range"
+      mode: "range",
+      minDate: "today",
+      disable: [
+        function(date) {
+            // return true to disable
+            return (date.getDay() === );
     });
   }
 }

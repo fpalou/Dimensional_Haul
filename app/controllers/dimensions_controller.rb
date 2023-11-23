@@ -1,5 +1,5 @@
 class DimensionsController < ApplicationController
-  before_action :set_dimension, only: %i[show edit update destroy] 
+  before_action :set_dimension, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
 
   # GET /dimensions
@@ -22,6 +22,7 @@ class DimensionsController < ApplicationController
 
   # GET /dimensions/:id
   def show
+    @booking = Booking.new
   end
 
   # GET /dimensions/new

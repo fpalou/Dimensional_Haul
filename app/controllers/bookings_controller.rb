@@ -8,6 +8,13 @@ class BookingsController < ApplicationController
   def new
     @dimension = Dimension.find(params[:dimension_id])
     @booking = Booking.new
+    
+    #method to get booked dates in my dimension
+    #go to @dimension and check all the bookings, and save all the bookings to an hash
+    @booked_dates = []
+      @dimension.bookings.map do |booking|
+       @booked_dates.push({ from: booking.start_date, to: booking.end_date })
+    end
   end
 
   def create

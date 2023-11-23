@@ -7,10 +7,6 @@ class DimensionsController < ApplicationController
     dimension_search
   end
 
-  def dates_blocked
-    start_date, end_date = params[:booking][:start_date].split("to")
-
-  end
 
   def dimension_search
     @dimensions = Dimension.all

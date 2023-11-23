@@ -1,6 +1,19 @@
-<h1>Thanks! Your new Dimension has been created! </h1>
-<%# <h4>use "cl_image_tag @dimension.photo.key, height: 300, width: 400, crop: :fill" to display the img of the thingy here</h4> %>
-<% if @dimension.photo.key %>
-<%= cl_image_tag @dimension.photo.key, height: 400, width: 400, crop: :fill %>
-<%= link_to "create", new_dimension_booking_path(@dimension.id)  %>
-<% end %>
+  <div class="show-banner" style="background-image: url(<%= cl_image_path @dimension.photo.key %>);">
+    <h2><%= @dimension.title %></h2>
+  </div>
+  <div class="show-content">
+    <div class="show-description pt-4">
+      <div class="col-md-6 col-lg-6 col-xl-6 mb-6">
+        <div class="card-product col-lg col-xl col-3">
+          <div class="card-product-infos">
+            <p><%= @dimension.description %></p>
+            <h3> <%= @dimension.category.name %></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show-interaction col-md-6 col-lg-6 col-xl-6 mb-6">
+      <%= link_to "create", new_dimension_booking_path(@dimension.id)  %>
+      <%= render "bookings/form", booking: @booking%>
+    </div>
+  </div>

@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: dimensions_path, method: :get, class: "d-flex" do |form|%>
+      <%= form.text_field :start_date,
+            as: :string,
+            value: params[:start_date],
+            class: "form-control",
+            placeholder: "What's your start date?",
+            data: { controller: "datepicker", range: "true" } %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "What are you looking for?"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-purple" %>
+    <% end %>
+  </div>
+</div>

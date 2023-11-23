@@ -2,7 +2,7 @@
 <%= simple_form_for [@dimension, booking] do |f| %>
 <%= f.input :start_date,
             as: :string,
-            input_html: { data: { controller: "datepicker", range: "true" } } %>
+            input_html: { data: { controller: "datepicker", range: "true", datepicker_disable: @booked_dates  } } %>
 <%= f.input :end_date,
             as: :hidden %>
 <%= f.input :guests %>

@@ -25,3 +25,4 @@
 <% end %>
 
 <%= link_to "Create Dimension", new_dimension_path, class: "nav-link" %>
+<%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>

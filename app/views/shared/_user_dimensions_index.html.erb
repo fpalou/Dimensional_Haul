@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <% if @user.owner? %>
+      <div class="container">
+        <div class="row">
+          <% if @dimensions.where(user_id: @user.id).empty? %>
+            <!-- Display message if no dimensions found -->
+            <div class="col-12 mb-4">
+              <div class="card-product col-lg col-xl col-3">
+                <div class="card-product-infos">
+                  <p>Create your first dimension so that others can rent it!</p>
+                  <%= link_to "Create Dimension", new_dimension_path, class: "btn btn-teal" %>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <% @dimensions.where(user_id: @user.id).each do |dimension| %>
+              <div class="col-md-4 col-lg-4 col-xl-4 mb-4">
+                <div class="card-product col-lg col-xl col-3">
+                  <div class="card-product-infos">
+                    <!-- Display dimension information -->
+                    <h2><%= dimension.title %></h2>
+                    <p><%= dimension.description %></p>
+                    <!-- Additional dimension attributes -->
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="d-none">
+        <!-- Hidden content for non-owners -->
+        <p>Not an owner</p>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,8 +1,16 @@
 .btn{
   border-radius: 5px;
+  color: $gray;
 }
 
 .btn-purple {
   background-color: $purple;
   border-color: 2px solid $yellow;
+  color: $gray;
+}
+
+.btn-teal {
+  background-color: $teal;
+  border-color: 2px solid $yellow;
+  color: $red900;
 }

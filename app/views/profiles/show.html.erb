@@ -1,3 +1,18 @@
 <h1>Welcome <%= @user.first_name %></h1>
 <p>Name: <%= @user.first_name %></p>
 <p>Email: <%= @user.email %></p>
+<% if @user.owner = true && @user.client = true %>
+  <p>Client status: owner and client</p>
+  <% elsif @user.client = true %>
+  <p>Client status: client</p>
+  <% else %>
+  <p>Client status: owner</p>
+<% end %>
+<% if @user.client = true %>
+<h2>Here are your dimensions</h2>
+<%= render "shared/user_dimensions_index" %>
+<% end %>
+<% if @user.owner = true %>
+<h2>These are your booked Dimensional trips</h2>
+<%= render "shared/user_bookings_index" %>
+<% end %>

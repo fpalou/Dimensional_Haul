@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   margin: 5px;
+  padding: 16px;
   border-radius: 8px;
   border: 1px solid, $purple;
 }
@@ -45,6 +46,11 @@
 .card-product a {
   text-decoration: none;
   color: $blue;
+}
+
+.card-product .btn {
+  color: $red900;
+  margin-top: 8px;
 }
 
 .card-product a:hover {

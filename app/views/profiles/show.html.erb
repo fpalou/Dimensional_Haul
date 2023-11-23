@@ -1,18 +1,35 @@
-<h1>Welcome <%= @user.first_name %></h1>
-<p>Name: <%= @user.first_name %></p>
-<p>Email: <%= @user.email %></p>
-<% if @user.owner = true && @user.client = true %>
-  <p>Client status: owner and client</p>
-  <% elsif @user.client = true %>
-  <p>Client status: client</p>
-  <% else %>
-  <p>Client status: owner</p>
-<% end %>
-<% if @user.client = true %>
-<h2>Here are your dimensions</h2>
-<%= render "shared/user_dimensions_index" %>
-<% end %>
-<% if @user.owner = true %>
-<h2>These are your booked Dimensional trips</h2>
-<%= render "shared/user_bookings_index" %>
-<% end %>
+<div>
+
+  <div class="d-flex flex-row mb-3">
+    <div class="row">
+      <div class="col-12">
+        <% if @user.owner?%>
+          <h2>Here are your dimensions</h2>
+        <%= render "shared/user_dimensions_index" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <h2>Welcome <%= @user.first_name %></h2>
+      <div class="card-info" style="display:block">
+        <p>Name: <%= @user.first_name %></p>
+        <br>
+        <p>Email: <%= @user.email %></p>
+        <br>
+         <% if @user.owner? && @user.client? %>
+           <p>Client status: owner and client</p>
+          <% elsif @user.client? %>
+          <p>Client status: client</p>
+          <% else %>
+          <p>Client status: owner</p>
+            <% end %>
+        </div>
+    </div>
+  </div>
+      <div class="row">
+        <% if @user.client? %>
+        <h2>These are your booked Dimensional trips</h2>
+        <%= render "shared/user_bookings_index" %>
+        <% end %>
+      </div>
+</div>

@@ -1,39 +1,41 @@
-<div class="container">
-  <div class="row">
-    <% if @user.owner? %>
-      <div class="container">
-        <div class="row">
-          <% if @dimensions.where(user_id: @user.id).empty? %>
-            <!-- Display message if no dimensions found -->
-            <div class="col-12 mb-4">
-              <div class="card-product col-lg col-xl col-3">
-                <div class="card-product-infos">
-                  <p>Create your first dimension so that others can rent it!</p>
-                  <%= link_to "Create Dimension", new_dimension_path, class: "btn btn-teal" %>
-                </div>
+<div>
+  <% if @user.owner? %>
+    <div class="d-flex flex-wrap">
+      <% card_count = 0 %>
+      <% if @dimensions.where(user_id: @user.id).empty? %>
+        <!-- Display message if no dimensions found -->
+        <div class="col-12 mb-4">
+          <div class="card-product col-lg col-xl col-3">
+            <div class="card-product-infos">
+              <p>Create your first dimension so that others can rent it!</p>
+              <%= link_to "Create Dimension", new_dimension_path, class: "btn btn-teal" %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <% @dimensions.where(user_id: @user.id).each do |dimension| %>
+          <% card_count += 1 %>
+          <div class="col-md-4 col-lg-3 col-xl-3 mb-4">
+            <div class="card-product col-lg col-xl col-3">
+              <div class="card-product-infos">
+                <!-- Display dimension information -->
+                <h2><%= dimension.title %></h2>
+                <p><%= dimension.description %></p>
+                <!-- Additional dimension attributes -->
               </div>
             </div>
-          <% else %>
-            <% @dimensions.where(user_id: @user.id).each do |dimension| %>
-              <div class="col-md-4 col-lg-4 col-xl-4 mb-4">
-                <div class="card-product col-lg col-xl col-3">
-                  <div class="card-product-infos">
-                    <!-- Display dimension information -->
-                    <h2><%= dimension.title %></h2>
-                    <p><%= dimension.description %></p>
-                    <!-- Additional dimension attributes -->
-                  </div>
-                </div>
-              </div>
-            <% end %>
+          </div>
+          <% if card_count % 3 == 0 %>
+            <!-- Start a new row after every third card -->
+            <div class="w-100"></div>
           <% end %>
-        </div>
-      </div>
-    <% else %>
-      <div class="d-none">
-        <!-- Hidden content for non-owners -->
-        <p>Not an owner</p>
-      </div>
-    <% end %>
-  </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="d-none">
+      <!-- Hidden content for non-owners -->
+      <p>Not an owner</p>
+    </div>
+  <% end %>
 </div>

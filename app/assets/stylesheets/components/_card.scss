@@ -6,7 +6,22 @@
   box-shadow: 0 0 8px $blue;
   display: flex;
   align-items: center;
-  margin: 5px;
+  margin: 0px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid, $purple;
+  width: 100%;
+}
+
+.card-info {
+  overflow: hidden;
+  height: 200px;
+  width: 350px;
+  background: $red100;
+  box-shadow: 0 0 8px $blue;
+  display: flex;
+  align-items: center;
+  margin: 0px;
   padding: 16px;
   border-radius: 8px;
   border: 1px solid, $purple;
@@ -20,14 +35,35 @@
   border-radius: 8px;
 }
 
+.card-info img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  padding: 8px;
+  border-radius: 8px;
+}
+
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: $yellow
+  color: $yellow;
+}
+
+.card-info h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $blue900;
 }
 
 .card-product h3 {
+  font-size: 14px;
+  margin: 8px;
+  color: $yellow
+}
+
+.card-info h3 {
   font-size: 14px;
   margin: 8px;
   color: $yellow
@@ -41,6 +77,16 @@
   margin-bottom: 0;
   margin-top: 10px;
   color: $light-gray
+}
+
+.card-info p {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 10px;
+  color: $purple900;
 }
 
 .card-product a {

@@ -1,0 +1,32 @@
+.show-banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-origin: border-box;
+  background-position: center;
+  background-size: cover;
+  background:lightgray 50% / cover no-repeat;
+  box-shadow: inset 0px 0px 60px 30px rgba(0, 0, 0, 0.9), // increased shadow
+  inset 0px 0px 80px 40px rgba(0, 0, 0, 0.8),
+  inset 0px 0px 100px 30px $pink300;
+
+  h2{
+    position: absolute;
+    font-size: 40px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: rgba($red600, 0.7);
+    font-weight: 300; // lighter weight for sharper text
+    letter-spacing: 0.05em; // spacing between letters for readability
+    text-shadow: -1px 0 $red400, 0 1px $red400, 1px 0 $red400, 0 -1px $red400;  }
+}
+.show-content{
+  display: flex;
+  justify-content: space-between;
+
+}
+.show-description, .show-interaction {
+  flex: 1;
+  background-color: $blue900;
+}

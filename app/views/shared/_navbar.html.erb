@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.jpg" %>
     <% end %>
 
@@ -9,24 +9,20 @@
     </button>
     <div class="flex-column">
         <h1 class="justify-content-center">Dimensional Haul</h1>
-        <p class="justify-content-center">A place to wander off</p>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Create Dimension", new_dimension_path, class: "nav-link" %>
+            <%# <%= link_to "Create Dimension", new_dimension_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "All dimensions", dimensions_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "profile pic.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My profile", "#", class: "dropdown-item" %>
-              <%= link_to "Guests or travels", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
+              <%= link_to profile_path do%>
+                <%= image_tag "profile pic.jpg", class: "avatar dropdown-toggle", 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
           </li>
         <% else %>
           <li class="nav-item">

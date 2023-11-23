@@ -1,14 +1,28 @@
 class DimensionsController < ApplicationController
-  before_action :set_dimension, only: %i[show edit update destroy] 
+  before_action :set_dimension, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
 
   # GET /dimensions
   def index
+    dimension_search
+  end
+
+
+  def dimension_search
     @dimensions = Dimension.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        dimensions.title @@ :query
+        OR dimensions.description @@ :query
+        OR categories.name @@ :query
+      SQL
+      @dimensions = @dimensions.joins(:category).where(sql_subquery, query: params[:query])
+    end
   end
 
   # GET /dimensions/:id
   def show
+    @booking = Booking.new
   end
 
   # GET /dimensions/new

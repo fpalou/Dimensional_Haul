@@ -1,6 +1,7 @@
 .btn{
   border-radius: 5px;
   color: $gray;
+  margin: auto;
 }
 
 .btn-purple {
@@ -14,4 +15,6 @@
   border-color: 2px solid $yellow;
   color: $red900;
   color: $dark-blue;
+  width: auto;
+  padding: 8px 24px;
 }

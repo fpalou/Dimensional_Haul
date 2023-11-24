@@ -165,12 +165,12 @@
 
 // ----- CARD DIMENSION -----
 .card-dimension-profile {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
+  // display: grid;
+  // grid-template-rows: auto 1fr;
+  // overflow: hidden;
   background: $black;
   box-shadow: 0 0 8px $blue;
-  margin: 0;
+  // margin: 0;
   padding: 16px;
   border-radius: 8px;
   border: 1px solid $purple;

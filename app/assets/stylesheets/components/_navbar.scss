@@ -1,7 +1,14 @@
 .navbar-lewagon {
   justify-content: center;
   background: $dark-blue;
-  h1, a{
+  h1{
+    color: $yellow;
+    font-weight: 600;
+    letter-spacing: 0.05em; // spacing between letters for readability
+    text-shadow: 2px 2px 8px $teal; // adjust these values as needed
+
+  }
+  a{
     color: $yellow;
   }
 }

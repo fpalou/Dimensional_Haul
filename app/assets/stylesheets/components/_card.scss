@@ -152,6 +152,17 @@
   justify-self: center;
 }
 
+
+.home-card .btn {
+  color: $red900;
+  margin-top: 8px;
+}
+
+.home-card a:hover {
+  color: $black;
+  background-color: $pink600;
+}
+
 // ----- CARD DIMENSION -----
 .card-dimension-profile {
   display: grid;
@@ -191,11 +202,6 @@
   margin-bottom: 0;
   margin-top: 10px;
   color: $light-gray;
-}
-
-.card-home .btn {
-  color: $red900;
-  margin-top: 8px;
 }
 
 .card-dimension-profile .card-product-infos {

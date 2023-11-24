@@ -9,6 +9,8 @@
         <% end %>
       </div>
     </div>
+
+    
     <div class="col-4">
       <h2>Welcome <%= @user.first_name %></h2>
       <div class="card-info" style="display:block">
@@ -25,9 +27,10 @@
             <% end %>
         </div>
     </div>
+    <%= link_to "Create Dimension", new_dimension_path, class: "nav-link" %>
   </div>
-  <%= link_to "Create Dimension", new_dimension_path, class: "nav-link" %>
-      <div class="row">
+
+       <div class="row">
         <% if @user.client? %>
         <h2>These are your booked Dimensional trips</h2>
         <%= render "shared/user_bookings_index" %>

@@ -1,0 +1,25 @@
+// .booking-table{
+//   border-radius: 8px;
+//   box-shadow: 0 0 8px $yellow;
+//   padding: 10px;
+// }
+
+.table{
+  box-shadow: 0 0 8px $yellow;
+}
+
+.thead-dark th{
+  background-color: $black;
+  color: $yellow;
+}
+
+.booking-rows td {
+  color: $blue;
+  font-size: 16px;
+}
+
+.booking-rows th {
+  color: $blue;
+  font-size: 16px;
+  font-weight: lighter;
+}

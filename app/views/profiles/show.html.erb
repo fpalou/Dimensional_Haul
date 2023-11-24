@@ -1,37 +1,43 @@
 <div>
 
-  <div class="d-flex flex-row mb-3">
+  <div class="d-flex col-12">
     <div class="row">
-      <div class="col-12">
+      <div class="col-8">
         <% if @user.owner?%>
           <h2>Here are your dimensions</h2>
         <%= render "shared/user_dimensions_index" %>
         <% end %>
       </div>
     </div>
-    <div class="col-4">
-      <h2>Welcome <%= @user.first_name %></h2>
-      <div class="card-info" style="display:block">
-        <p>Name: <%= @user.first_name %></p>
-        <br>
-        <p>Email: <%= @user.email %></p>
-        <br>
-         <% if @user.owner? && @user.client? %>
-           <p>Client status: owner and client</p>
-          <% elsif @user.client? %>
-          <p>Client status: client</p>
-          <% else %>
-          <p>Client status: owner</p>
+
+
+    <div class="welcome-profile col-3">
+      <h2> Hi <%= @user.first_name %></h2>
+      <%# <img class="profile-img" src="https://res.cloudinary.com/dckwlb2by/image/upload/v1700818534/profile2_qipz7k.png" alt="profile-photo"> %>
+        <div class="card-profile">
+          <p>Name: <%= @user.first_name %></p>
+          <p>Email: <%= @user.email %></p>
+          <% if @user.owner? && @user.client? %>
+            <p>Status: owner and client</p>
+            <% elsif @user.client? %>
+              <p>Status: client</p>
+            <% else %>
+            <p>Status: owner</p>
             <% end %>
         </div>
+    
+      <%= link_to "Create a new Dimension", new_dimension_path, class: "btn btn-purple" %>
+    </div>
     </div>
   </div>
-      <div class="row">
+
+       <div class="row">
         <% if @user.client? %>
         <h2>These are your booked Dimensional trips</h2>
         <%= render "shared/user_bookings_index" %>
         <% end %>
       </div>
+      
 </div>
 
 

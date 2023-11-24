@@ -1,0 +1,48 @@
+// .booking-table{
+//   border-radius: 8px;
+//   box-shadow: 0 0 8px $yellow;
+//   padding: 10px;
+// }
+
+.table{
+  box-shadow: 0 0 8px $yellow;
+}
+
+.thead-dark th{
+  background-color: $black;
+  color: $yellow;
+}
+
+.booking-rows td {
+  color: $blue;
+  font-size: 16px;
+}
+
+.booking-rows th {
+  color: $blue;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.welcome-profile {
+  justify-content: center;
+  align-items: center;
+}
+
+.card-profile {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px $pink;
+  background-color: $dark-blue
+}
+
+
+.profile-img { 
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px $pink;
+  margin: 10px auto;
+}

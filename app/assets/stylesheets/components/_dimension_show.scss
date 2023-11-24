@@ -21,12 +21,79 @@
     letter-spacing: 0.05em; // spacing between letters for readability
     text-shadow: -1px 0 $red400, 0 1px $red400, 1px 0 $red400, 0 -1px $red400;  }
 }
+
 .show-content{
   display: flex;
   justify-content: space-between;
-
 }
+
+
+
 .show-description, .show-interaction {
   flex: 1;
   background-color: $blue900;
+}
+
+// -----by Tiph-----
+.card-show {
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px $blue;
+  background-color: $black;
+}
+
+.card-show-infos h3 {
+  font-size: 24 px;
+  font-weight: bold;
+  margin: 0;
+  color: $blue;
+}
+
+.fa-solid {
+  color: $pink;
+}
+
+
+
+.card-show-infos h2 {
+  font-size: 16px;
+  font-weight: lighter ;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  color: $yellow;
+  justify-content: left;
+  ;
+}
+
+.card-show-infos p {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 10px;
+    color: $light-gray
+}
+
+.show-des {
+  margin-right: 20px;
+  margin-top: 20px;
+  
+}
+
+.show-des h1 {
+  font-size: 40px;
+  font-weight: 300;
+  color: $blue;
+  justify-content: center;
+}
+
+.booking-frame {
+  box-shadow: 0 0 8px $yellow;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  justify-content: center;
 }

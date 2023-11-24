@@ -26,12 +26,14 @@
         </div>
     </div>
   </div>
+  <%= link_to "Create Dimension", new_dimension_path, class: "nav-link" %>
       <div class="row">
         <% if @user.client? %>
         <h2>These are your booked Dimensional trips</h2>
         <%= render "shared/user_bookings_index" %>
         <% end %>
       </div>
+      
 </div>
 
 

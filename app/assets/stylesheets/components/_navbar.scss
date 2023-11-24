@@ -1,10 +1,14 @@
 .navbar-lewagon {
   justify-content: center;
   background: $dark-blue;
+  h1, a{
+    color: $yellow;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
 }
 
 .navbar-lewagon .navbar-brand img {

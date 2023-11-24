@@ -1,17 +1,37 @@
-.banner-btn,
-.banner-btn:hover,
-.banner-btn:focus {
-  color: $blue;
-  text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); /* Prevent inheritance from `body` */
-  background-color: $yellow;
+#banner-btn,
+#banner-btn:hover,
+#banner-btn:focus {
+  color: $teal900;
+  // text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); /* Prevent inheritance from `body` */
+  background-color: $teal150;
+  border-radius: 0; // sharp corners
+  clip-path: polygon(0 0, 160% 0%, 70% 100%, 0% 100%); // cut corner on the bottom right
+  border: 0px;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+  padding: 16px 24px;
+  font-size: 16px;
 }
+
 .banner-style{
   background-image: url("https://res.cloudinary.com/dckwlb2by/image/upload/v1700663326/banner1.webp");
   background-size: cover;
-  height: 80vh;
   background-position: center;
-  h1{
-    color: $blue;
+  // position: absolute;
+  top: 0;
+  left: 0;
+  height: 80vh;
+  width: 100%;
+  transition: transform 1.8s ease;
+  main{
+    h1{
+      font-size: 40px;
+
+      color: $yellow450;
+      font-weight: 600; // lighter weight for sharper text
+      letter-spacing: 0.05em; // spacing between letters for readability
+      text-shadow: -1px 0 $teal600, 0 1px $teal600, 1px 0 $teal600, 0 -1px $teal600;
+    }
+
   }
   p {
     color: $orange;
@@ -19,8 +39,16 @@
 
 
 }
+.banner-text-layout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .home-page{
   color: $orange;
+  position: relative;
+  // overflow: hidden;
   p{
     color: white;
   }
@@ -35,4 +63,11 @@
 }
 .lead {
   color: $orange;
+}
+.fade-out{
+  animation: fadeOut 2s forwards;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }

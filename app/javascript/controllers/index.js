@@ -9,7 +9,7 @@ eagerLoadControllersFrom("controllers", application)
 import HomeBannerController from "./home_banner_controller.js";
 
 // Lazy load controllers as they appear in the DOM (remember not to preload controllers in import map!)
-// import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
-// lazyLoadControllersFrom("controllers", application)
+import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
+lazyLoadControllersFrom("controllers", application)
 
 window.Stimulus.register("home", HomeBannerController);

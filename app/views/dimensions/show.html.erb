@@ -1,19 +1,24 @@
   <div class="show-banner" style="background-image: url(<%= cl_image_path @dimension.photo.key %>);">
-    <h2><%= @dimension.title %></h2>
+
   </div>
-  <div class="show-content">
-    <div class="show-description pt-4">
-      <div class="col-md-6 col-lg-6 col-xl-6 mb-6">
-        <div class="card-product col-lg col-xl col-3">
-          <div class="card-product-infos">
-            <p><%= @dimension.description %></p>
-            <h3> <%= @dimension.category.name %></h3>
+
+  <div class="show-content col-12">
+    <div class="show-des col-sm-10 col-lg-7">
+        <h1 class = "align-middle"><%= @dimension.title %></h2>
+        <div class="card-show">
+          <div class="card-show-infos">
+            <h2> Category : <%= @dimension.category.name %></h2>
+            <h3> <i class="fa-solid fa-rocket"></i>  What can you expect?</h1>
+            <p> <%= @dimension.description %></p>
+            
           </div>
         </div>
-      </div>
     </div>
-    <div class="show-interaction col-md-6 col-lg-6 col-xl-6 mb-6">
-      <%= link_to "create", new_dimension_booking_path(@dimension.id)  %>
-      <%= render "bookings/form", booking: @booking%>
+
+    <div class="show-booking col-sm-10 col-lg-4 col-xl-4 mb-6">
+      <div class="booking-frame">
+        <h3>Book this Dimension</h3>
+        <%= render "bookings/form", booking: @booking%>
+      </div>
     </div>
   </div>
